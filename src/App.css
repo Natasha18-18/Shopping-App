@@ -1,38 +1,111 @@
-.App {
-  text-align: center;
+/* Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Header */
+.header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 15px 20px;
+  background: #222;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Cart Button */
+.cart-btn {
+  padding: 8px 15px;
+  background: orange;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Controls (Search + Filter) */
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px;
+}
+
+.controls input,
+.controls select {
+  padding: 8px;
+}
+
+/* Product Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 20px;
+}
+
+/* Product Card */
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.card img {
+  height: 120px;
+  object-fit: contain;
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 8px;
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Cart Panel */
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background: #f5f5f5;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: -3px 0 8px rgba(0,0,0,0.2);
+}
+
+/* Cart Item */
+.cart-item {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.cart-item input {
+  width: 50px;
+  margin: 5px 0;
+}
+
+.cart-item button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  cursor: pointer;
 }
