@@ -2,8 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: black;
-  padding: 10px 20px;
+
+  padding: 18px 40px;
+
+  background: #111827;
 }
 
 .logo {
@@ -13,16 +15,32 @@
 .nav-links {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
+  font-weight: 500;
 }
 
-.nav-links button {
-  background: red;
-  color: white;
+.logout-btn {
+  padding: 8px 16px;
   border: none;
-  padding: 5px 10px;
+  border-radius: 8px;
+
+  background: crimson;
+  color: white;
+
+  cursor: pointer;
+}
+
+@media(max-width:600px) {
+
+  .navbar {
+    padding: 15px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
 }

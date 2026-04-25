@@ -1,6 +1,109 @@
-.main-login{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.login-container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #667eea,
+    #764ba2,
+    #6b8dd6,
+    #8e44ad
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 40px 30px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.login-card h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.login-card p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.login-btn,
+.checkout-btn,
+.logout-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-btn {
+  background: white;
+  color: #6a11cb;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  background: #f2f2f2;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.checkout-btn {
+  background: #00c853;
+  color: white;
+}
+
+.checkout-btn:hover {
+  background: #00b34a;
+  transform: translateY(-2px);
+}
+
+.logout-btn {
+  background: #ff4d4d;
+  color: white;
+}
+
+.logout-btn:hover {
+  background: #e63c3c;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 500px) {
+  .login-card {
+    padding: 30px 20px;
+  }
+
+  .login-card h1 {
+    font-size: 1.6rem;
+  }
+
+  .login-card p {
+    font-size: 0.9rem;
+  }
 }

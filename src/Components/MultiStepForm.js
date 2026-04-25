@@ -9,7 +9,6 @@ function MultiStepForm() {
 
   const [step, setStep] = useState(1);
   const [success, setSuccess] = useState(false);
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",

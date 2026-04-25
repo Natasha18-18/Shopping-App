@@ -7,7 +7,7 @@ function CartButton({ onClick }) {
   const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
 
   return (
-    <button className="cart-btn" onClick={onClick}>
+    <button className="cart-btn" onClick={() => navigate("/login")}>
       🛒 Cart ({totalItems})
     </button>
   );

@@ -1,26 +1,19 @@
 import {
-  useState,
-  useContext
+  useState
 } from "react";
 
 import {
   useNavigate
 } from "react-router-dom";
 
-import {
-  AuthContext
-} from "../context/AuthContext";
-
 import "./Auth.css";
 
-function Login() {
+function Signup() {
 
   const navigate = useNavigate();
 
-  const { login } =
-    useContext(AuthContext);
-
   const [form, setForm] = useState({
+    name: "",
     email: "",
     password: ""
   });
@@ -33,30 +26,18 @@ function Login() {
     });
   };
 
-  const handleLogin = (e) => {
+  const handleSignup = (e) => {
 
     e.preventDefault();
 
-    const storedUser =
-      JSON.parse(
-        localStorage.getItem("user")
-      );
+    localStorage.setItem(
+      "user",
+      JSON.stringify(form)
+    );
 
-    if (
-      storedUser &&
-      storedUser.email === form.email &&
-      storedUser.password === form.password
-    ) {
+    alert("Signup Successful ✅");
 
-      login();
-
-      // ✅ Go back to cart after login
-      navigate("/products");
-
-    } else {
-
-      alert("Invalid Credentials ❌");
-    }
+    navigate("/login");
   };
 
   return (
@@ -65,9 +46,17 @@ function Login() {
 
       <div className="auth-card">
 
-        <h1>Welcome Back 👋</h1>
+        <h1>Create Account</h1>
 
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleSignup}>
+
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            required
+            onChange={handleChange}
+          />
 
           <input
             type="email"
@@ -86,7 +75,7 @@ function Login() {
           />
 
           <button type="submit">
-            Login
+            Signup
           </button>
 
         </form>
@@ -94,10 +83,10 @@ function Login() {
         <p
           className="switch-text"
           onClick={() =>
-            navigate("/signup")
+            navigate("/login")
           }
         >
-          Don't have an account? Signup
+          Already have an account? Login
         </p>
 
       </div>
@@ -106,4 +95,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Signup;
